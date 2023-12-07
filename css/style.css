@@ -1,0 +1,21 @@
+:root{
+    --bleuMarin: #003748;
+    --bleuClair: #75A9F9;
+    --grisPale: #CECED1;
+}
+
+/* CSS Principal */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--grisPale);
+    min-width:980px;
+    font-family: 'Helvetica';
+}
+
+footer {
+    margin:auto;
+    margin-top: 20px;
+}
