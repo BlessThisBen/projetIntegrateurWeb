@@ -5,6 +5,7 @@ class Utilisateur{
     private $_id;
     private $_prenom;
     private $_nom;
+    private $_mdp;
     private $_courriel;
     private $_telephone;
     
@@ -116,6 +117,26 @@ class Utilisateur{
     public function set_telephone($_telephone)
     {
         $this->_telephone = $_telephone;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of _mdp
+     */ 
+    public function get_mdp()
+    {
+        return $this->_mdp;
+    }
+
+    /**
+     * Set the value of _mdp
+     *
+     * @return  self
+     */ 
+    public function set_mdp($_mdp)
+    {
+        $this->_mdp = $_mdp;
 
         return $this;
     }
