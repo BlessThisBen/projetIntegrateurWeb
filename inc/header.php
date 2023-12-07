@@ -30,7 +30,7 @@ if (session_status() === PHP_SESSION_NONE) {
             </ul>
         </nav>
 
-        <img src="img/banniereDesktop.png" alt="Bannière Dronica">
+        <img class="banniere" src="img/banniereDesktop.png" alt="Bannière Dronica">
 
         <nav class="menu-principal">
             <ul>
