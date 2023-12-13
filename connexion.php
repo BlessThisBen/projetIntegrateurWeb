@@ -32,28 +32,33 @@ if(isset($_GET['loginreq'])){
 
 <div class="center flex">
 
-    <div class="log-title">Se Connecter</div>
+    <h1>Se connecter</h1>
 
     <form method="post" action="./connexion.php?loginreq" class="loginForm">
+        <fieldset>
+            <div class="row-form">
+                <label for="mailip">Courriel : </label><input type="email" name="mail" id=mailip>
+            </div>
+
+            <div class="row-form">
+                <label for="pwdip">Mot de passe : </label><input type="password" name="pwd" id=pwdip>
+            </div>
         
-    
-        <label for="mailip">Courriel : </label><input type="email" name="mail" id=mailip>
+            <div class="row-form">
+                <label for="stayconip">Rester connecté : </label><input type="checkbox" name="stayCon" id=stayconip value="on" checked>
+            </div>
+         
 
-        <label for="pwdip">Mot de passe : </label><input type="password" name="pwd" id=pwdip>
+            <button type="submit" class="submitbutton" >Connexion</button>
 
-        <label for="stayconip"> Rester Connecté : </label><input type="checkbox" name="stayCon" id=stayconip value="on" checked> 
+            <?php //affiche erreur de connexion
+            if(isset($_SESSION['connErr']) && $_SESSION['connErr'] === true ){
+                echo("<p color=red>ERREUR DE CONNEXION COURRIEL OU MOT DE PASSE ERRONÉ</p>");
+                $_SESSION['connErr'] = false;
+            }
 
-        <?php //affiche erreur de connexion
-        if(isset($_SESSION['connErr']) && $_SESSION['connErr'] === true ){
-            echo("<p color=red>ERREUR DE CONNEXION COURRIEL OU MOT DE PASSE ERRONÉ</p>");
-            $_SESSION['connErr'] = false;
-        }
-
-        ?>
-
-        <button type="submit" class="submitbutton" >Connexion</button>
-
-        
+            ?>
+        </fieldset>
     </form>
 </div>
 

@@ -16,6 +16,10 @@ body {
     min-height: 100vh;
 }
 
+h1{
+    text-align: center;
+}
+
 footer {
     background-color: var(--bleuClair);
     color: white;
@@ -26,6 +30,11 @@ footer {
 
 footer p{
     margin: 5px 0 5px 0;
+}
+
+.row{
+    display: flex;
+    flex-direction: row; /*Valeur par défaut, écrit simplement pour que ça soit plus explicite*/
 }
 
 /***********Header************/
@@ -90,4 +99,57 @@ nav ul{
     text-decoration: none;
     color: black;
     display: block;
+}
+
+/*Pages de connexion et d'inscription*/
+
+fieldset{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px 250px 35px 250px;
+    padding: 30px 0 30px 0;
+    border: black 1px solid;
+}
+
+.row-form{
+    display: flex;
+    flex-direction: row; /*Valeur par défaut, écrit simplement pour que ça soit plus explicite*/
+    width: 300px;
+    padding-bottom: 7px;
+}
+
+.row-form-in{
+    display: flex;
+    flex-direction: row;
+    width: 600px;
+    padding: 10px;
+}
+
+.label-input{
+    display: flex;
+    justify-content: flex-start;
+    width: 300px;
+    padding-right: 10px;
+}
+
+#mailip, #pwdip, #nip, #fnip, #telip{
+    margin-left: auto;
+}
+
+#stayconip{
+    margin-left: 15px;
+}
+
+.submitbutton{
+    background-color: green;
+    width: 175px;
+    height: 50px;
+    border-radius: 10px;
+    margin-top: 10px;
+    color: white;
+}
+
+.submitbutton:hover{
+    background-color: yellowgreen;
 }
