@@ -101,7 +101,11 @@ nav ul{
     display: block;
 }
 
-/*Pages de connexion et d'inscription*/
+.menu-principal li.active{
+    background-color: var(--bleuClair);
+}
+
+/********Pages de connexion et d'inscription********/
 
 fieldset{
     display: flex;
@@ -152,4 +156,11 @@ fieldset{
 
 .submitbutton:hover{
     background-color: yellowgreen;
+}
+
+/*******Page des drones*********/
+
+.img-drone{
+    max-width: 400px;
+    max-height: 400px;
 }
