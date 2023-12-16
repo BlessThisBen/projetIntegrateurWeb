@@ -18,6 +18,7 @@
         <p>Type: <?=$drone->get_id_type()?></p>
         <p>Garantie: <?=$drone->get_id_garantie()?></p>
         <p>Prix: <?=$drone->get_prix()?>$</p>
+        <button class="drone-button" title="Ajouter au panier">Ajouter au panier</button>
     </div>
 
     <?php } ?>
