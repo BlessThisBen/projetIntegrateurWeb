@@ -1,4 +1,5 @@
 <?php include_once("inc/header.php"); ?>
+<script src="js/scriptIndex.js" defer></script>
 
 <?php $dm = new droneManager($bdd) ?>
 <?php $droneArray = $dm->getDrones(); ?>

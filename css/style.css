@@ -37,6 +37,103 @@ footer p{
     flex-direction: row; /*Valeur par défaut, écrit simplement pour que ça soit plus explicite*/
 }
 
+.remove{
+    display: none;
+}
+
+.menu-principal ul {
+    display: none; /*Cache le menu principal*/
+}
+
+.hamburger-menu{
+    color: white;
+    border: 1px solid white;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.hamburger-menu:hover{
+    color: red;
+    border: 1px solid red;
+}
+
+.menu-ferme{
+    display: none;
+}
+
+.menu-ouvert ul {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 20%;
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-ouvert li {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+.menu-ouvert a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.menu-ouvert a:hover {
+    color: red;
+}
+
+
+/*Responsive*/
+@media only screen and (min-width: 600px) { /* Pour desktop */
+
+    .hamburger-menu{
+        display: none;
+    }
+
+    /*Menu principal*/
+
+    .menu-principal ul{
+        justify-content: center;
+        display: flex;
+    }
+
+    .menu-principal li{
+        width: 20%;
+        border: 2px solid black;
+        text-align: center;
+        border-radius: 5px;
+        background-color: whitesmoke;
+        
+    }
+
+    .menu-principal li:hover{
+        background-color: var(--bleuClair);
+    }
+
+    .menu-principal a{
+        text-decoration: none;
+        color: black;
+        display: block;
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+
+    .menu-principal li.active{
+        background-color: var(--bleuClair);
+    }
+
+}
+
 /***********Header************/
 
 /*Menu utilisateur*/
@@ -66,44 +163,14 @@ nav ul{
     padding-right: 15px;
 }
 
-.menu-utilisateur ul li:first-child{
+.menu-utilisateur ul li:nth-child(2){
     margin-right: auto;
+    padding-left: 15px;
 }
 
 /*Image de bannière*/
 .banniere{
     width: 100%;
-}
-
-/*Menu principal*/
-
-.menu-principal ul{
-    justify-content: center;
-}
-
-.menu-principal li{
-    width: 20%;
-    border: 2px solid black;
-    text-align: center;
-    border-radius: 5px;
-    background-color: whitesmoke;
-    
-}
-
-.menu-principal li:hover{
-    background-color: var(--bleuClair);
-}
-
-.menu-principal a{
-    text-decoration: none;
-    color: black;
-    display: block;
-    padding-top: 7px;
-    padding-bottom: 7px;
-}
-
-.menu-principal li.active{
-    background-color: var(--bleuClair);
 }
 
 /********Pages de connexion et d'inscription********/

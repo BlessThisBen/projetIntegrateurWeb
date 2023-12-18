@@ -8,7 +8,7 @@ include_once("classe/PDOFactory.php");
 
 $bdd = PDOFactory::getMySQLConnection();
 
-$parts = explode('/', $_SERVER["SCRIPT_NAME"]);
+$parts = explode('/', $_SERVER["SCRIPT_NAME"]); //Permet d'avoir au nom du fichier uniquement de la page chargée
 $file = $parts[count($parts) - 1];
 
 ?>
@@ -19,7 +19,9 @@ $file = $parts[count($parts) - 1];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Accueil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Pour l'icône du menu "hamburger" -->
+    <title>Dronica</title>
+    <link rel="icon" type="image/x-icon" href="./img/DroneIcon.ico"> <!-- Icône d'onglet du site -->
     <script src="js/script.js" defer></script>
 </head>
 <body>
@@ -27,6 +29,17 @@ $file = $parts[count($parts) - 1];
 
         <nav class="menu-utilisateur">
             <ul>
+                <li><div class="hamburger-menu">
+                    <span>&#9776;</span>
+                        <div class="menu-ferme">
+                            <ul>
+                                <li><a href="index.php">Accueil</a></li>
+                                <li><a href="drones.php">Drones</a></li>
+                                <li><a href="fournisseurListe.php">Fournisseurs</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
                 <li><a href="panier.php">Panier</a></li>
                 <li><a href="inscription.php">Inscription</a></li>
                 <li><a href="connexion.php">Connexion</a></li>
