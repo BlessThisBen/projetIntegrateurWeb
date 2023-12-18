@@ -8,8 +8,10 @@ include_once("classe/PDOFactory.php");
 
 $bdd = PDOFactory::getMySQLConnection();
 
-$parts = explode('/', $_SERVER["SCRIPT_NAME"]); //Permet d'avoir au nom du fichier uniquement de la page chargée
-$file = $parts[count($parts) - 1];
+$parts = explode('/', $_SERVER["SCRIPT_NAME"]); //Permet d'obtenir le chemin d'accès au fichier
+$file = $parts[count($parts) - 1]; //Permet d'avoir le nom du fichier de la page chargée avec l'extension
+$fileInfo = pathinfo($file); //Retourne un tableau contenant les informations du fichier
+$fileName = $fileInfo['filename']; //Retourne uniquement le nom du fichier, sans l'extension
 
 ?>
 
@@ -20,7 +22,7 @@ $file = $parts[count($parts) - 1];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Pour l'icône du menu "hamburger" -->
-    <title>Dronica</title>
+    <title>Dronica - <?= $fileName ?></title> <!-- Affiche la page chargée dans l'onglet du navigateur -->
     <link rel="icon" type="image/x-icon" href="./img/DroneIcon.ico"> <!-- Icône d'onglet du site -->
     <script src="js/script.js" defer></script>
 </head>

@@ -92,9 +92,29 @@ footer p{
     color: red;
 }
 
+.u-fixed{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 25;
+}
+
+.p-fixed{
+    position: fixed;
+    top: 0;
+    z-index: 26;
+    width: 75%;
+    display: block;
+    margin-left: 8%;
+}
+
+.static{
+    position: static;
+}
+
 
 /*Responsive*/
-@media only screen and (min-width: 600px) { /* Pour desktop */
+@media only screen and (min-width: 680px) { /* Pour desktop */
 
     .hamburger-menu{
         display: none;
@@ -113,7 +133,6 @@ footer p{
         text-align: center;
         border-radius: 5px;
         background-color: whitesmoke;
-        
     }
 
     .menu-principal li:hover{
