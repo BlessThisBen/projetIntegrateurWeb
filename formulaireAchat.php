@@ -1,4 +1,5 @@
 <?php include_once("inc/header.php"); ?>
+<script src="js/scriptCommande.js" defer></script>
 <?php $am = new adresseManager($bdd); ?>
 
 <h1>Informations d'achat et de livraison</h1>
@@ -42,10 +43,9 @@
                 <input type="submit" name="adresse_expedition" value="Valider" id="bouton-validation" title="Valider">
                 
                 <?php if(isset($_REQUEST['action']) && $_REQUEST['action'] == 'add_address'){ 
-                    /* Ajouter le code PHP qui ajoute l'adresse de l'utilisateur à la table "adresse_facturation" de la BD, puis, si l'entrée est valide, afficher que cela a fonctionné, sinon afficher l'inverse */
                     $adresseObj = new Adresse($_REQUEST);
                     if ($am->insertAddress($adresseObj)){
-						echo '<p class="flex-center">L\'adresse a bien été ajoutée!</p>';
+						echo '<p class="flex-center" id="adresse_ajoute">L\'adresse a bien été ajoutée!</p>';
                         $_SESSION['adresse'] = $am->getLastAddressID();
                     }
 					else {
@@ -80,9 +80,9 @@
     </form>
 </div>
 <div class="row flex-center">
-    <form action="./traitement.php" method="post">
+    <form action="./traitement.php" method="post" id="form-commande">
         <input type="hidden" name="action" value="commande">
-        <input type="submit" class="commande-bouton" value="Passer la commande!" name="envoi_commande" title="Passer la commande">
+        <input type="submit" class="commande-bouton" value="Passer la commande!" name="envoi_commande" title="Passer la commande" id="bouton_commande">
     </form>
 </div>
 
