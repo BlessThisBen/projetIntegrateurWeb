@@ -30,7 +30,7 @@ if(isset($_GET['loginreq'])){
 
 
 
-<div class="center flex">
+<div class="center-flex">
 
     <h1>Se connecter</h1>
 

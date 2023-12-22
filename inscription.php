@@ -1,7 +1,7 @@
 <?php include_once("inc/header.php"); ?>
 
 
-<div class="center flex">
+<div class="center-flex">
 
     <h1>S'inscrire</h1>
 
