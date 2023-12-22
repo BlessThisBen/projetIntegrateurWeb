@@ -16,6 +16,10 @@ body {
     min-height: 100vh;
 }
 
+h1, h2, h3{
+    text-align: center;
+}
+
 footer {
     background-color: var(--bleuClair);
     color: white;
@@ -26,6 +30,146 @@ footer {
 
 footer p{
     margin: 5px 0 5px 0;
+}
+
+.row{
+    display: flex;
+    flex-direction: row; /*Valeur par défaut, écrit simplement pour que ça soit plus explicite*/
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center{
+    justify-content: center;
+    align-items: center;
+}
+
+.space-around{
+    justify-content: space-around;
+}
+
+.remove{
+    display: none;
+}
+
+.menu-principal ul {
+    display: none; /*Cache le menu principal*/
+}
+
+.hamburger-menu{
+    color: white;
+    border: 1px solid white;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.hamburger-menu:hover{
+    color: red;
+    border: 1px solid red;
+}
+
+.menu-ferme{
+    display: none;
+}
+
+.menu-ouvert ul {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 20%;
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-ouvert li {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+.menu-ouvert a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.menu-ouvert a:hover {
+    color: red;
+}
+
+.u-fixed{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 25;
+}
+
+.p-fixed{
+    position: fixed;
+    top: 0;
+    z-index: 26;
+    width: 75%;
+    display: block;
+    margin-left: 8%;
+}
+
+.static{
+    position: static;
+}
+
+
+/*Responsive*/
+@media only screen and (min-width: 680px) { /* Pour desktop */
+
+    .hamburger-menu{
+        display: none;
+    }
+
+    /*Menu principal*/
+
+    .menu-principal ul{
+        justify-content: center;
+        display: flex;
+    }
+
+    .menu-principal li{
+        width: 20%;
+        border: 2px solid black;
+        text-align: center;
+        border-radius: 5px;
+        background-color: whitesmoke;
+    }
+
+    .menu-principal li:hover{
+        background-color: var(--bleuClair);
+    }
+
+    .menu-principal a{
+        text-decoration: none;
+        color: black;
+        display: block;
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+
+    .menu-principal li.active{
+        background-color: var(--bleuClair);
+    }
+
+    .achat-form-page{
+        display: flex;
+        justify-content: space-around;
+    }
+
 }
 
 /***********Header************/
@@ -57,8 +201,9 @@ nav ul{
     padding-right: 15px;
 }
 
-.menu-utilisateur ul li:first-child{
+.menu-utilisateur ul li:nth-child(2){
     margin-right: auto;
+    padding-left: 15px;
 }
 
 /*Image de bannière*/
@@ -66,28 +211,266 @@ nav ul{
     width: 100%;
 }
 
-/*Menu principal*/
+/********Pages de connexion et d'inscription********/
 
-.menu-principal ul{
-    justify-content: center;
+fieldset{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px 250px 35px 250px;
+    padding: 30px 0 30px 0;
+    border: black 1px solid;
 }
 
-.menu-principal li{
-    width: 20%;
-    border: 2px solid black;
-    text-align: center;
-    border-radius: 5px;
-    background-color: whitesmoke;
-    padding-top: 7px;
+.row-form{
+    display: flex;
+    flex-direction: row; /*Valeur par défaut, écrit simplement pour que ça soit plus explicite*/
+    width: 300px;
     padding-bottom: 7px;
 }
 
-.menu-principal li:hover{
-    background-color: var(--bleuClair);
+.row-form-in{
+    display: flex;
+    flex-direction: row;
+    width: 600px;
+    padding: 10px;
 }
 
-.menu-principal a{
-    text-decoration: none;
+.label-input{
+    display: flex;
+    justify-content: flex-start;
+    width: 300px;
+    padding-right: 10px;
+}
+
+#mailip, #pwdip, #nip, #fnip, #telip{
+    margin-left: auto;
+}
+
+#stayconip{
+    margin-left: 15px;
+}
+
+.submitbutton{
+    background-color: green;
+    width: 175px;
+    height: 50px;
+    border-radius: 10px;
+    margin-top: 10px;
+    color: white;
+}
+
+.submitbutton:hover{
+    background-color: yellowgreen;
+}
+
+/*******Page des drones*********/
+
+.img-drone{
+    
+    max-width: 100%;
+    height: auto;
+}
+
+#drones-liste{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.drone-solo{
+    margin: 25px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px black;
+    max-width: 30%;
+}
+
+.drone-button{
+    background-color: #36454f;
+    color: whitesmoke;
+    outline: 2px solid;
+    outline-color: whitesmoke;
+    cursor: pointer;
+    font-size: 0.8rem;
+    line-height: 2.5rem;
+    max-width: 150px;
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.drone-button:hover{
+    border: 2px solid #94812b;
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
+    color: #94812b;
+}
+
+/*******Page d'accueil*********/
+
+/*Carousel d'images*/
+
+.carousel-images{
+    max-width: 100%;
+}
+
+#carousel-conteneur{
+    max-width: 50%;
+    max-height: 400px;
+    min-height: 400px;
+    width: 50%;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+}
+
+.diapositive-hide{
+    display: none;
+    transition: opacity 0.6s ease;
+}
+
+#prev, #next{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
     color: black;
-    display: block;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+#next{
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+#prev:hover, #next:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-texte{
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+.diapositive-numero{
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+#points-conteneur{
+    text-align: center;
+}
+
+.point{
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .point:hover{
+    background-color: #717171;
+}
+
+.fondu{
+    animation-name: fondu;
+    animation-duration: 1.5s;
+}
+
+@keyframes fondu {
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+
+/*******Page du formulaire d'achat*********/
+
+.achat-form-page{
+    flex-direction: row;
+}
+
+.cercle {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #333;
+    text-align: center;
+    line-height: 20px;
+}
+
+.plus {
+    font-size: 15px;
+    color: #ccc;
+}
+
+#credit{
+    margin: 0 0 0 10px;
+}
+
+.achat-form{
+    display: flex;
+    flex-direction: column;
+    padding: 10%;
+    justify-content: space-between;
+    height: 300px;
+}
+
+#numero_maison, #rue, #ville, #province, #code_postal, #proprietaire, #numeroCarte, #dateExpiration, #numeroSecurite, #pays{
+    margin-left: auto;
+}
+
+.commande-bouton{
+    font-weight: bold;
+    width: 45%;
+    height: 40px;
+    background-color: var(--bleuClair);
+    text-align: center;
+    border-radius: 10px;
+    margin: 3% 0 3% 0;
+    border: solid 2px var(--bleuMarin);
+}
+
+.commande-bouton:hover{
+    cursor: pointer;
+    background-color: var(--bleuMarin);
+    border: solid 2px var(--bleuClair);
+    color: wheat;
+}
+
+a.commande-bouton{
+    text-decoration: none;
+}
+
+#bouton-validation{
+    width: 50%;
+    align-self: center;
+}
+
+#bouton-validation:hover{
+    cursor: pointer;
 }
