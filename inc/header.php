@@ -3,6 +3,18 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 } 
 
+function getFormClasses(){
+    if(isset($_SESSION['user'])){
+        return "hidden";
+    }
+    else{
+        return "loginForm";
+    }
+
+
+}
+
+
 include_once("inc/autoloader.php");
 include_once("classe/PDOFactory.php");
 
@@ -25,6 +37,19 @@ $fileName = $fileInfo['filename']; //Retourne uniquement le nom du fichier, sans
     <title>Dronica - <?= $fileName ?></title> <!-- Affiche la page chargée dans l'onglet du navigateur -->
     <link rel="icon" type="image/x-icon" href="./img/DroneIcon.ico"> <!-- Icône d'onglet du site -->
     <script src="js/script.js" defer></script>
+    <?php 
+    //autoconnect with javascript
+
+    if(!isset($_SESSION['user']) && isset($_COOKIE['mail']) && isset($_COOKIE['password']))
+    {
+    //try to connect
+
+        $con = UtilisateurManager::getUserConnection($_COOKIE['mail'],$_COOKIE['password']);
+        if($con === null){  //if infos were wrong disconnect
+            echo('<script> document.cookie = "mail=;  expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            document.cookie = "password=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";</script>');
+        }
+    } ?>
 </head>
 <body>
     <main>
@@ -43,8 +68,25 @@ $fileName = $fileInfo['filename']; //Retourne uniquement le nom du fichier, sans
                     </div>
                 </li>
                 <li><a href="panier.php">Panier</a></li>
-                <li><a href="inscription.php">Inscription</a></li>
-                <li><a href="connexion.php">Connexion</a></li>
+                
+                <?php 
+                if(isset($_GET['disconnect'])){//déconnecter en cas de déconnexion
+                    unset($_SESSION['user']);
+                    echo('<script> document.cookie = "mail=;  expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                    document.cookie = "password=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";</script>');
+                }
+
+
+                if(!isset($_SESSION['user']))//si connecté, affiche le bouton se connecter sinon déconnecter
+                {
+                    echo("<a href=\"inscription.php\">Inscription</a></li>
+                    <li><a href=\"connexion.php\" >Connexion</a></li>");
+                }
+                else
+                {
+                    echo('<li><a href="connexion.php?disconnect">Déconnexion</a></li>');
+                }
+                ?>
             </ul>
         </nav>
 

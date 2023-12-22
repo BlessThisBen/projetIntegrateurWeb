@@ -66,6 +66,11 @@ function getCookie(cname) {
     return "";
 };
 
-  function setCookie(cname, cvalue) {
+function setCookie(cname, cvalue) {
     document.cookie = cname + "=" + cvalue + ";"+ ";path=/";
 };
+
+function disconnect(){
+    document.cookie = "mail=;  expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = "password=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+}

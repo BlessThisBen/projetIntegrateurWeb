@@ -127,6 +127,25 @@ footer p{
 }
 
 
+/* Pour inscription et se connecter*/
+
+.row-form {
+    width:100%;
+    
+}
+
+
+form fieldset{
+    display:flexbox;
+    background-color: palegoldenrod;
+    
+    flex-direction: column;
+    align-items: center;
+   
+    
+    border: black 1px solid;
+}
+
 /*Responsive*/
 @media only screen and (min-width: 680px) { /* Pour desktop */
 
@@ -168,6 +187,15 @@ footer p{
     .achat-form-page{
         display: flex;
         justify-content: space-around;
+    }
+    form fieldset{
+        background-color: aqua;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 25px 250px 35px 250px;
+        padding: 30px 0 30px 0;
+        border: black 1px solid;
     }
 
 }
@@ -213,19 +241,30 @@ nav ul{
 
 /********Pages de connexion et d'inscription********/
 
-fieldset{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 25px 250px 35px 250px;
-    padding: 30px 0 30px 0;
-    border: black 1px solid;
+
+div.welcome-message{
+
+    h2 {
+        text-align: center;
+        color: green;
+    }
+    
 }
 
+.errMsg {
+    color: red;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
 .row-form{
-    display: flex;
+    display:grid;
     flex-direction: row; /*Valeur par défaut, écrit simplement pour que ça soit plus explicite*/
-    width: 300px;
+    width: 50%;
     padding-bottom: 7px;
 }
 
@@ -239,7 +278,7 @@ fieldset{
 .label-input{
     display: flex;
     justify-content: flex-start;
-    width: 300px;
+    width: 50%;
     padding-right: 10px;
 }
 
@@ -481,3 +520,4 @@ a.commande-bouton{
     display: flex;
     justify-content: center;
 }
+

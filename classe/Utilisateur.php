@@ -11,6 +11,9 @@ class Utilisateur{
     
 
     public function __construct(array $args=array()){
+       
+
+
         foreach($args as $varname =>$var){
             $metdcall= "set_" . $varname;
             if(method_exists($this, $metdcall)){
