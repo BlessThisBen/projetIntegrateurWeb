@@ -1,7 +1,7 @@
 <?php include_once("inc/header.php"); ?>
 
 
-<div class="center flex">
+<div class="center-flex">
 
     <div class="log-title">Se Connecter</div>
 
