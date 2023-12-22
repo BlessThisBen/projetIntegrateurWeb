@@ -1,5 +1,11 @@
 <?php include_once("inc/header.php"); ?>
 
+<?php 
+if(isset($_POST))
+echo('yes');
+
+?>
+
 
 <div class="center-flex">
 
@@ -9,25 +15,25 @@
         <fieldset>
             <div class="row-form-in">
                 <div class="label-input">
-                    <label for="nip">Prénom : </label><input name="name" id=nip>
+                    <label for="nip">Prénom : </label><input name="name" id=nip required>
                 </div>
                 <div class="label-input">
-                    <label for="fnip">Nom : </label><input name="familyName" id=fnip>
-                </div>
-            </div>
-
-            <div class="row-form-in">
-                <div class="label-input">
-                    <label for="mailip">Courriel : </label><input type="email" name="mail" id=mailip>
-                </div>
-                <div class="label-input">
-                    <label for="pwdip">Mot de passe : </label><input type="password" name="pwd" id=pwdip>
+                    <label for="fnip">Nom : </label><input name="familyName" id=fnip required>
                 </div>
             </div>
 
             <div class="row-form-in">
                 <div class="label-input">
-                    <label for="telip">Téléphone : </label><input type="tel" name="tel" id=telip>
+                    <label for="mailip">Courriel : </label><input type="email" name="mail" id=mailip required>
+                </div>
+                <div class="label-input">
+                    <label for="pwdip">Mot de passe : </label><input type="password" name="pwd" id=pwdip required>
+                </div>
+            </div>
+
+            <div class="row-form-in">
+                <div class="label-input">
+                    <label for="telip">Téléphone : </label><input type="tel" name="tel" id=telip required>
                 </div>
                 <div class="label-input">
                     <label for="stayconip"> Rester Connecté : </label><input type="checkbox" name="stayCon" id=stayconip value="on" checked>
