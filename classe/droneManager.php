@@ -4,14 +4,14 @@ require_once('./classe/drone.php');
 class DroneManager{
     private $_db;
 
-    const SELECT_DRONES = "SELECT Drones.id, modele, Types.nom_type as id_type, Marques.nom_marque as id_marque, Garanties.duree_garantie as id_garantie, prix, image
+    const SELECT_DRONES = "SELECT Drones.id, modele, Types.nom_type AS id_type, Marques.nom_marque AS id_marque, Garanties.duree_garantie AS id_garantie, prix, image
                             FROM Drones
                             INNER JOIN Types ON Drones.id_type = Types.id
                             INNER JOIN Marques ON Drones.id_marque = Marques.id
                             INNER JOIN Garanties ON Drones.id_garantie = Garanties.id
                             ORDER BY Drones.id";
     
-    const SELECT_DRONE_ID = "SELECT Drones.id, modele, id_type, id_marque, id_garantie, prix, image
+    const SELECT_DRONE_ID = "SELECT Drones.id, modele, Types.nom_type AS id_type, Marques.nom_marque AS id_marque, Garanties.duree_garantie AS id_garantie, prix, image
                                 FROM Drones
                                 INNER JOIN Types ON Drones.id_type = Types.id
                                 INNER JOIN Marques ON Drones.id_marque = Marques.id
