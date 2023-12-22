@@ -468,9 +468,16 @@ a.commande-bouton{
 
 #bouton-validation{
     width: 50%;
+    margin-top: 2%;
     align-self: center;
 }
 
 #bouton-validation:hover{
     cursor: pointer;
+}
+
+#form-commande{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
